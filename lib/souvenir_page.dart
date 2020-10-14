@@ -12,29 +12,37 @@ class _SouvenirPageState extends State<SouvenirPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Vacances Rome'),
-          centerTitle: true,
-          actions: <Widget>[
-            PopupMenuButton(
-                itemBuilder: (context) => [
-                      PopupMenuItem(
-                        child: GestureDetector(
-                            onTap: () {
-                              Get.toNamed("/details");
-                            },
-                            child: Text("InduceSmile.com")
-                        ),
-                      ),
-                    ])
-          ],
-        ),
-        body: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[SouvenirHeader(), MasoneryGrid()],
-            ),
+      appBar: AppBar(
+        title: Text('Vacances Rome'),
+        centerTitle: true,
+        actions: <Widget>[
+          PopupMenuButton(
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: GestureDetector(
+                    onTap: () {
+                      Get.toNamed("/details");
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.settings),
+                        SizedBox(width: 5),
+                        Text("Settings"),
+                      ],
+                    )
+                ),
+              ),
+            ]
+          )
+        ],
+      ),
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[SouvenirHeader(), MasoneryGrid()],
           ),
-        ));
+        ),
+      )
+    );
   }
 }
