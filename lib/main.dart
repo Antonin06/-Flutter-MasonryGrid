@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:memolidays_souvenir/settings.dart';
 import 'package:memolidays_souvenir/souvenir_page.dart';
 
 void main() {
   runApp(MyApp());
+  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
 class MyApp extends StatelessWidget {
@@ -13,17 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData( 
-        primarySwatch: Colors.orange, 
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
       home: SouvenirPage(),
-      getPages: [
-        GetPage(name: '/details', page: () => Settings())
-      ],
+      getPages: [GetPage(name: '/details', page: () => Settings())],
     );
   }
 }
-
-
