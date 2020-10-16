@@ -6,7 +6,7 @@ import 'package:memolidays_souvenir/souvenir_page.dart';
 
 void main() {
   runApp(MyApp());
-  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.white,
+        canvasColor: Colors.transparent,
       ),
       debugShowCheckedModeBanner: false,
       home: SouvenirPage(),
